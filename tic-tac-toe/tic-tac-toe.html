@@ -1,0 +1,39 @@
+<body>
+	<head>
+		<link rel = 'stylesheet' href = 'tic-tac-toe.css'>
+	</head>
+
+	<h1>
+		Tic-Tac-Toe
+	</h1>
+
+	<h2 id = 'turn'></h2>
+
+	<table id = 'board' name = 'board'> </table> 
+
+	<div class="form-popup" id="myForm">
+		<form class="form-container">
+		<h2> Game Mode </h2>
+
+		<h3> Select your mode </h3>
+	    <input type="radio" name="mode" value="Two-player" checked>Two-player
+    	<br>
+    	<input type="radio" name="mode" value="One-player">One-player
+    	<br>
+    	<h3> Select your piece </h3>
+    	<input type="radio" name="shape" value="X" checked> X
+    	<input type="radio" name="shape" value="O"> O
+    	<br> </br>
+	    <button type="button" class="btn" onclick = "Display.closeForm(), Game.start()"> Play </button>
+		</form>
+	</div>
+
+	<br></br>
+	<button type="button" class="resetbtn" onclick = "Game.resetGame()"> Reset Game </button>
+	<button type="button" class="resetbtn" onclick = "Display.openForm()"> Game Settings </button>
+
+
+	<script type = 'text/javascript' src = 'tic-tac-toe.js'>
+	</script>
+
+</body>

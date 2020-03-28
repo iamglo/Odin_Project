@@ -1,0 +1,95 @@
+<html>
+<head>
+  <link rel = 'stylesheet' href = 'todo.css'>
+</head>
+
+<body>
+<h1 id = 'title'> TODOLIST </h1>
+<h3> You can do it! </h3>
+<button id = taskadd onCLick = 'View.openForm("taskForm")'> Add Task </button>
+
+<button id = projectadd onCLick = 'View.openForm("projectForm")' > Add Project </button>
+<br></br>
+
+
+<table id = projectTable>
+  <tr>
+      <th class="header__item">Your Projects</th>
+  </tr>
+</table>
+
+
+<br></br>
+
+<div id = projects>
+  <div id = "curProject">
+   Current Project :
+  </div>
+
+  <table id = "taskTable">
+    <tr>
+  	    <th class="header__item">Task</th>
+  	    <th class="header__item">Priority</th>
+  	    <th class="header__item">Description</th>
+  	    <th class="header__item">Status</th>
+  	    <th class="header__item"></th>
+   	</tr>
+  </table>
+</div>
+
+
+<div class="form-popup" id="taskForm">
+    <form class="form-container" novalidate>
+    <h3>Add Task</h3>
+
+    <label for="name"><b>Task Name: </b></label>
+    <input type="text" id = "name" name="name"  placeholder="Task Name" required>
+
+    <label for="due"><b>Description: </b></label>
+    <input type="text" id = "description" placeholder="Description" name="description">
+
+    <label for="priority"><b>Priority: </b></label>
+    <select name="priority" id = 'priority'>
+    <option value="High">High</option>
+    <option value="Medium">Medium</option>
+    <option value="Low">Low</option>
+
+    </select>
+    <br></br>
+
+    <button type = "button" class="btn" onCLick = 'Control.addTask()'>Add Task
+    </button>
+    <button type = "button" class="btn cancel" onCLick = 'View.closeForm("taskForm")'> Close
+    </button>
+  </form>
+</div>
+
+
+<div class="form-popup" id="projectForm">
+    <form class="form-container" novalidate>
+    <h3>Add Project</h3>
+
+    <label for="pname"><b>Project Name: </b></label>
+    <input type="text" id = "projectn" name="projectn" required>
+
+
+    <label for="priority"><b>Priority: </b></label>
+    <select name="priority" id = 'priority'>
+    <option value="high">High</option>
+    <option value="medium">Medium</option>
+    <option value="low">Low</option>
+  </select>
+  <br></br>
+
+    <button type = "button" class="btn" onCLick = 'Control.addProject()' >Add Project
+    </button>
+    <button type = "button" class="btn cancel"  onCLick = 'View.closeForm("projectForm")'>Close
+    </button>
+  </form>
+</div>
+
+<script type = 'text/javascript' src = 'todo.js'>
+</script>
+
+<body>
+<html>

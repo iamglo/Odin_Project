@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+	<link rel = "stylesheet" href = "style.css">
+</head>
+
+<body>
+	<h1> <u> Shifumi </u> </h1>
+
+	<div>
+	<button type="button" onclick = "game('rock');" class = "myButton">Rock</button>
+	<button type="button" onclick = "game('paper');" class = "myButton">Paper</button>
+	<button type="button" onclick = "game('scissors');" class = "myButton">Scissors</button>
+	</div>
+
+	<div>
+	<h3 class = "box"> Your score is:  <span id = "yourScore"></span></h3>
+    <h3 class = "box"> The computer's score is:  <span id = "computerScore"></span></h3>
+    <h3> <span id = "roundOutput"></span></h3>
+	</div>
+
+    <button type="button" onclick = "reset();">Reset</button>
+</body>
+
+<script>
+	yourScore = 0;
+	computerScore = 0;
+	roundOutput = "";
+
+	document.getElementById("roundOutput").innerHTML = roundOutput;
+	document.getElementById("yourScore").innerHTML = yourScore;
+	document.getElementById("computerScore").innerHTML = computerScore;
+
+	function computerPlay(){
+		var choice = ['rock', 'paper', 'scissors']
+		select = Math.floor(Math.random()*3)
+		return choice[select]
+	}
+
+	function playRound(playerSelection, computerSelection){
+		player = playerSelection.toLowerCase()
+		computer = computerSelection.toLowerCase()
+
+		if (player == computer) {
+			return -1
+		}
+
+		if (player == "rock"){
+			if (computer == "paper"){
+				return 1
+			}
+			else{
+				return 0
+			}
+		}
+		else if (player == "scissors"){
+			if (computer == "paper"){
+				return 1
+			}
+			else{
+				return 0
+			}
+		}
+		else{
+			if (computer == "rock"){
+				return 1
+			}
+			else{
+				return 0
+			}
+		}
+	}
+
+	function reset()
+	{
+		computerScore = 0
+		yourScore = 0
+
+		document.getElementById("yourScore").innerHTML = yourScore;
+		document.getElementById("computerScore").innerHTML = computerScore;
+	}
+
+	function game(playerSelection){
+
+	if (yourScore + computerScore < 5){
+		computerSelection = computerPlay()
+
+		result = playRound(playerSelection, computerSelection)
+
+		if (result == -1){
+			roundOutput = "You tied! You both played " + computerSelection
+
+		}
+		else if (result == 0){
+			computerScore += 1
+			roundOutput = "You Lose! " + computerSelection + " beats " +  playerSelection
+		}
+		else {
+			yourScore += 1
+			roundOutput = "You Win! " + playerSelection + " beats " +  computerSelection
+		}
+	}
+
+	document.getElementById("yourScore").innerHTML = yourScore;
+	document.getElementById("computerScore").innerHTML = computerScore;
+	document.getElementById("roundOutput").innerHTML = roundOutput;
+	}
+</script>
+
+
+</html>

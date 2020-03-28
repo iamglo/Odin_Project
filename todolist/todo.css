@@ -1,0 +1,67 @@
+.form-container {
+max-width: 250px;
+padding: 25px;
+background-color: #fff;
+}
+
+#title{
+  margin-left:30%;
+  font: 30px Helvetica;
+	color: rgba(0,0,255,0.8);
+}
+
+#projectTable{
+  border: 1px solid black;
+
+}
+
+#curProject{
+  display: inline;
+	position: relative;
+	font: 20px Helvetica, Sans-Serif;
+	color: rgba(0,0,255,0.8);
+}
+
+body {
+  margin-left:20%;
+  margin-right:20%;
+  background: Beige;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+
+}
+
+td{
+  text-align: center
+  vertical-align: middle
+}
+
+/* Hide the Popup form */
+.form-popup {
+display: none;
+position: fixed;
+left: 45%;
+top:5%;
+transform: translate(-45%,5%);
+border: 2px solid #666;
+z-index: 9;
+}
+
+/* Full-width for input fields */
+.form-container input[type=text], .form-container input[type=password] {
+width: 100%;
+padding: 10px;
+margin: 5px 0 22px 0;
+border: none;
+background: #eee;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+background-color: #ddd;
+outline: none;
+}

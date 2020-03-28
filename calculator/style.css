@@ -1,0 +1,61 @@
+body{
+	background: Ivory;
+}
+
+h1 {
+		text-align:center;
+		color: #ff4411; 
+		font-size: 48px; 
+		font-family: 'Signika', sans-serif; 
+}
+
+.calculator { 
+	display:block;
+	margin: auto;
+	text-align:center; 
+	padding: 50px;
+}
+
+.grid-container{
+	display: inline-grid;
+	padding: 10px;
+	grid-gap: 10px;
+	grid-template-columns: repeat(4, 50px);
+	grid-template-rows: repeat(5, 50px);
+	--grid-rows: 5
+	--grid-cols: 4
+}
+
+.key {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color : Gainsboro;
+	font-weight: bold;
+	border: 2px solid black;
+	border-radius: 6px; 
+}
+
+.key:hover{
+	background: transparent; 
+	border: 2px solid #0099CC;
+
+}
+
+.output {
+	display: block;
+	margin: auto;
+	font-weight: bold;
+
+	border: 2px solid black;
+	width: 230px;
+	height: 50px;
+	border-radius: 6px; 
+
+	background-color: Gainsboro;
+
+	text-align: right;
+	vertical-align: middle;
+	line-height: 50px; 
+}

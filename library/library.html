@@ -1,0 +1,59 @@
+<body>
+	<head>
+		<link rel = 'stylesheet' href = 'library.css'>
+	</head>
+
+	<h1> Library Manager </h1>
+
+	<div id = container>
+
+	<h2> Your Books </h2>
+	<table id = 'table' class="table">
+		<tr>
+		    <th class="header__item">Name</th>
+		    <th class="header__item">Author</th>
+		    <th class="header__item">Page-count</th>
+		    <th class="header__item">Status</th>
+		    <th class="header__item"></th>
+	 	</tr>
+	</table>
+
+
+
+	<br></br>
+
+	<button id = 'newBook' onclick = 'openForm()'> Add New Book </button>
+	</div>
+
+	<div class="form-popup" id="myForm">
+  		<form class="form-container" novalidate>
+	    <h3>Add New Book</h3>
+
+	    <label for="name"><b>Name: (Required) </b></label>
+	    <input type="text" id = "name" name="Name" required>
+
+	    <label for="author"><b>Author: </b></label>
+	    <input type="text" id = "author" placeholder="Author" name="Author">
+
+	    <label for="status"><b>Status: </b></label>
+	    <select name="status" id = 'status'>
+			<option value="unread">Unread</option>
+			<option value="read">Read</option>
+		</select>
+		<br></br>
+
+		<label for="name"><b>Page count: </b></label>
+	    <input type="text" id = "pagecount" placeholder="Page count" name="Pagecount">
+
+	    <button type = "button" class="btn" onclick = "addBookToLibrary()">Add
+	    </button>
+	    <button type = "button" class="btn cancel" onclick="closeForm()">Close
+	    </button>
+ 	 	</form>
+	</div>
+
+	<script type = 'text/javascript' src = 'library.js'>
+
+	</script>
+
+</body>
